@@ -1,5 +1,6 @@
 import { ArrowUp, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Magnetic } from "./effect/Magnet";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -10,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-950 py-16 px-6 md:px-12 lg:px-20">
+    <footer className="bg-white/60 dark:bg-black/50  py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Social Media Section */}
@@ -50,12 +51,12 @@ const Footer = () => {
                 { name: "Contacts", link: "/contact" },
               ].map((item, index) => (
                 <li key={index}>
-                  <a
-                    href={item.link}
+                  <Link
+                    to={item.link} // ✅ Pakai Link agar navigasi tidak reload halaman
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-600 transition-colors duration-300"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

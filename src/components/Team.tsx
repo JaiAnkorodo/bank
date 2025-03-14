@@ -165,7 +165,7 @@ function TeamMemberCard({
         <motion.img
           src={member.image || "/placeholder.svg"}
           alt={member.name}
-          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
           onError={(e) => {
             e.currentTarget.src = "/placeholder.svg";
             e.currentTarget.onerror = null;

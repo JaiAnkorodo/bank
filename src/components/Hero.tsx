@@ -50,7 +50,7 @@ function Hero() {
           transition={{ delay: 0.2 }}
           className="flex items-center justify-center gap-2 text-xs md:text-sm mb-6"
         >
-          <Megaphone className="text-xl md:text-3xl text-inherit" />
+          <Megaphone className="text-xl md:text-2xl text-inherit" />
           <span className="text-inherit">
             Announcement! Our newest products and services are here
           </span>
@@ -82,7 +82,7 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               className="bg-blue-900 hover:bg-blue-600 text-white font-medium rounded-full px-6 md:px-8 py-2 md:py-2.5 shadow-lg"
-              onClick={() => navigate("/services")}
+              onClick={() => navigate("/login")}
             >
               Join Now
             </motion.button>

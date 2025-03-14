@@ -1,8 +1,11 @@
+"use client";
+
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { FiMoon, FiSun, FiMenu, FiX } from "react-icons/fi";
+import { FiMoon, FiSun, FiMenu, FiX, FiLogIn } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import useDarkMode from "../hooks/useDarkMode";
+import { Magnetic } from "./effect/Magnet";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useDarkMode();
@@ -70,6 +73,19 @@ export default function Navbar() {
         ))}
       </ul>
 
+      {/* Login Button with Magnetic Effect */}
+      <Magnetic strength={30}>
+        <Link
+          to="/login"
+          className="hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 
+    text-white px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 
+    hover:shadow-lg hover:shadow-blue-500/30"
+        >
+          <FiLogIn className="text-white" />
+          Login
+        </Link>
+      </Magnetic>
+
       {/* Right Section: Dark Mode + Hamburger */}
       <div className="flex items-center space-x-3">
         {/* Dark Mode Button */}
@@ -127,6 +143,17 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Login Button for Mobile */}
+            <Link
+              to="/login"
+              className="mt-2 mx-3 mb-3 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 
+        text-white px-4 py-2 rounded-full font-medium text-sm transition-all"
+              onClick={() => setIsOpen(false)}
+            >
+              <FiLogIn className="text-white" />
+              Login
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

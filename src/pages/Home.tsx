@@ -1,9 +1,9 @@
-// src/Home.tsx
 import Hero from "../components/Hero";
 import MarqueePromo from "../components/MarqueePromo";
 import About from "../components/About";
 import Team from "../components/Team";
 import FAQ from "../components/FAQ";
+import ChatBubble from "../components/ChatBubble";
 
 const Home = () => {
   return (
@@ -13,6 +13,7 @@ const Home = () => {
       <About />
       <Team />
       <FAQ />
+      <ChatBubble />
     </div>
   );
 };
